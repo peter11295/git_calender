@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>830</width>
-    <height>607</height>
+    <width>822</width>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -52,16 +52,6 @@
      <string>送出</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>30</y>
-      <width>311</width>
-      <height>451</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTimeEdit" name="timeEdit">
     <property name="geometry">
      <rect>
@@ -72,13 +62,23 @@
      </rect>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>321</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>830</width>
+     <width>822</width>
      <height>21</height>
     </rect>
    </property>
