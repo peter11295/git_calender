@@ -7,7 +7,7 @@
 #include <QTime>
 #include <QDateTime>
 #include <QFile>
-#include <warming.h>
+#include "warming.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-
+    //void resetPrevioustime();
     ~MainWindow();
 
 private slots:
@@ -29,11 +29,12 @@ private slots:
     void updateDate();
     void Warmingshow();
 
+
 private:
     Ui::MainWindow *ui; 
     QTimer *clock;
     QDate DateNow;
-    QTime TimeNow;
+    QTime TimeNow,Previoustime;
 };
 
 #endif // MAINWINDOW_H

@@ -16,10 +16,14 @@ Warming::Warming(QWidget *parent) :
         }
         ui->textBrowser->append(line);
     }
-
 }
 
 Warming::~Warming()
 {
     delete ui;
+}
+
+void Warming::on_pushButton_clicked()
+{
+    close();
 }

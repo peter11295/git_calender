@@ -10,8 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     clock ->setInterval(1000);
     connect(clock,SIGNAL(timeout()),this,SLOT(updateTime()));
     connect(clock,SIGNAL(timeout()),this,SLOT(updateDate()));
+    connect(clock,SIGNAL(timeout()),this,SLOT(Warmingshow()));
     clock->start();
-    clock->stop();
+
 }
 
 MainWindow::~MainWindow()
@@ -23,14 +24,14 @@ void MainWindow::on_pushButton_clicked()
 {
     QString content,Time,Date;
     QDate date;
-    QTime time,Previoustime;
+    QTime time;
 
     content=ui->textEdit->toPlainText();
     date=ui->calendarWidget->selectedDate();
     Date=ui->calendarWidget->selectedDate().toString();
     time=ui->timeEdit->time();
     Time=ui->timeEdit->time().toString("hh:mm a");
-    Previoustime=time.addMSecs(-30);
+    Previoustime=time.addSecs(-1800);
 
     ui->textBrowser->append(Date+" "+Time);
     ui->textBrowser->append(content);
@@ -41,10 +42,8 @@ void MainWindow::on_pushButton_clicked()
         QTextStream out(&file);
         out<<Date+" "+Time<<endl<<content<<endl;
     }
-    if(Previoustime==TimeNow)
-    {
-        ui->Warmingshow();
-    }
+
+    qDebug()<<Previoustime.toString("hh:mm");
 
 }
 
@@ -56,6 +55,7 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
 void MainWindow::updateTime()
 {
     TimeNow=TimeNow.currentTime();
+    qDebug() << TimeNow.toString("hh:mm");
 }
 
 void MainWindow::updateDate()
@@ -65,6 +65,13 @@ void MainWindow::updateDate()
 
 void MainWindow::Warmingshow()
 {
-    Warming WM;
-    WM.show();
+    if(TimeNow.toString("hh:mm")==Previoustime.toString("hh:mm"))
+    {
+        Warming WM;
+        WM.setModal(1);
+        WM.exec();
+        Previoustime=Previoustime.addSecs(-3600);
+    }
 }
+
+

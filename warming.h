@@ -4,9 +4,11 @@
 #include <QDialog>
 #include <QFile>
 #include <QTextStream>
+#include "mainwindow.h"
 
 namespace Ui {
 class Warming;
+
 }
 
 class Warming : public QDialog
@@ -17,8 +19,13 @@ public:
     explicit Warming(QWidget *parent = 0);
     ~Warming();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Warming *ui;
+
+
 };
 
 #endif // WARMING_H
