@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -36,6 +37,8 @@ public:
     QPushButton *pushButton;
     QTimeEdit *timeEdit;
     QTextBrowser *textBrowser;
+    QLabel *label;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -44,7 +47,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(822, 619);
+        MainWindow->resize(839, 615);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         calendarWidget = new QCalendarWidget(centralWidget);
@@ -52,23 +55,35 @@ public:
         calendarWidget->setGeometry(QRect(30, 30, 411, 301));
         textEdit = new QTextEdit(centralWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(30, 400, 251, 141));
+        textEdit->setGeometry(QRect(60, 410, 251, 141));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(330, 440, 75, 71));
+        pushButton->setGeometry(QRect(360, 430, 75, 71));
         QFont font;
         font.setPointSize(15);
         pushButton->setFont(font);
         timeEdit = new QTimeEdit(centralWidget);
         timeEdit->setObjectName(QStringLiteral("timeEdit"));
-        timeEdit->setGeometry(QRect(30, 350, 118, 22));
+        timeEdit->setGeometry(QRect(100, 340, 118, 22));
         textBrowser = new QTextBrowser(centralWidget);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(470, 20, 321, 481));
+        textBrowser->setGeometry(QRect(500, 40, 311, 481));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(150, 370, 71, 31));
+        QFont font1;
+        font1.setPointSize(16);
+        label->setFont(font1);
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(40, 340, 47, 21));
+        QFont font2;
+        font2.setPointSize(12);
+        label_2->setFont(font2);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 822, 21));
+        menuBar->setGeometry(QRect(0, 0, 839, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -86,6 +101,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         pushButton->setText(QApplication::translate("MainWindow", "\351\200\201\345\207\272", 0));
+        label->setText(QApplication::translate("MainWindow", "\345\205\247\345\256\271:", 0));
+        label_2->setText(QApplication::translate("MainWindow", "\346\231\202\351\226\223:", 0));
     } // retranslateUi
 
 };

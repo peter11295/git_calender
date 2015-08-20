@@ -8,6 +8,7 @@
 #include <QDateTime>
 #include <QFile>
 #include "warming.h"
+#include <QVector>
 
 namespace Ui {
 class MainWindow;
@@ -24,10 +25,11 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void on_calendarWidget_clicked(const QDate &date);
     void updateTime();
     void updateDate();
     void Warmingshow();
+    void checktime();
+    void addnote();
 
 
 private:
@@ -35,6 +37,9 @@ private:
     QTimer *clock;
     QDate DateNow;
     QTime TimeNow,Previoustime;
+    int LineTotal;
+    QVector<QString>vector_date;
+    QVector<QString>vector_note;
 };
 
 #endif // MAINWINDOW_H
