@@ -21,12 +21,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     //void resetPrevioustime();
+    QString DisplaySentence;
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
     void updateTime();
-    void updateDate();
+//    void updateDate();
     void Warmingshow();
     void checktime();
     void addnote();
@@ -40,6 +41,8 @@ private:
     int LineTotal;
     QVector<QString>vector_date;
     QVector<QString>vector_note;
+
+
 };
 
 #endif // MAINWINDOW_H

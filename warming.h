@@ -5,10 +5,12 @@
 #include <QFile>
 #include <QTextStream>
 #include "mainwindow.h"
+#include <QTime>
+#include <QDate>
+#include <QVector>
 
 namespace Ui {
 class Warming;
-
 }
 
 class Warming : public QDialog
@@ -24,7 +26,6 @@ private slots:
 
 private:
     Ui::Warming *ui;
-
 
 };
 
